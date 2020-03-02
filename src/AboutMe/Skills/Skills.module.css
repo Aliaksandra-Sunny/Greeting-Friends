@@ -1,9 +1,8 @@
 .styleMap {
-  width: 100%;
+  width: 80%;
+  height: 30%;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border: 1px solid #025eff;
+  justify-content: space-around;
+  align-items: flex-start;
   flex-wrap: wrap;
 }

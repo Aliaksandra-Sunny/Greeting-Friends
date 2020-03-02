@@ -1,11 +1,18 @@
 .App {
+  background-color: #dcc6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.aboutYou{
   text-align: center;
-  background-color: #fffdb5;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-
+  height: 80%;
+  width: 50%;
 }

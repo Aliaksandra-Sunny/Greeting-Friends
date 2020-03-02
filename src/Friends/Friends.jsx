@@ -1,31 +1,22 @@
 import React from 'react';
-import style from "./Greeting.module.css"
+import style from "./Friends.module.css"
+import Friend from "./Friend/Friend";
 
-class Greeting extends React.Component {
-    constructor(props){
-        super(props);
-        this.newNameRef=React.createRef();
-    }
-
-    onClickHello=()=>{
-        if(this.newNameRef.current.value!==""){
-            let newName=this.newNameRef.current.value;
-            this.newNameRef.current.value="";
-            alert("Халлёу, "+newName+"!:)");
-            this.props.addFriend();
-        }
-        else alert("Не знаю, как тебя зовут:(");
-
-    }
-    render = () => {
+class Friends extends React.Component {
+    render = (props) => {
+        let friendsItems = this.props.friends.map((friend) => {
+            return (
+                <Friend friend={friend}/>
+            )
+        });
         return (
-            <div className={style.greetingBox}>
-                <input ref={this.newNameRef}  placeholder="Ну-ка представься"/>
-                <button onClick={this.onClickHello}>Йоу</button>
+            <div className={style.friends}>
+                <h3>My friends:</h3>
+                {friendsItems}
             </div>
-        );
+        )
     }
 }
 
-export default Greeting;
+export default Friends;
 

@@ -1,17 +1,20 @@
-.greetingBox{width: 250px;
-  border: 1px solid black;
+.greetingBox{
+  width: 400px;
   margin: 5px;
   padding: 5px;
-  background-color: #c494e1;
 }
 
 .greetingBox span{width: 15px;
   margin: 5px;
 }
 
+.greetingBox input{
+  width: 200px;
+}
+
 .greetingBox button{
   margin-left: 5px;
   padding: 5px;
-  background-color: #ff465f;
+  background-color: #b46dff;
   border-radius: 5px;
 }

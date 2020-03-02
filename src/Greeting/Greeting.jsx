@@ -12,7 +12,7 @@ class Greeting extends React.Component {
             let newName=this.newNameRef.current.value;
             this.newNameRef.current.value="";
             this.props.addFriend(newName);
-            alert("Халлёу, "+newName+"!:)");
+            alert("Халлёу, "+newName+"! Теперь мы друзья:)");
 
         }
         else alert("Не знаю, как тебя зовут:(");

@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import style from './App.module.css';
+import Greeting from "./Greeting/Greeting";
+import Friends from "./Friends/Friends";
+import AboutMe from "./AboutMe/AboutMe";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+    state = {
+        aboutMe: {
+            myName: "Belyavskaya Alexandra",
+            mySkills: ["communicative", "optimistic", "infantile"],
+        },
+        friends: [],
+
+    }
+
+    addFriend = (newFriend) => {
+        let newFriends = [...this.state.friends, newFriend]
+        this.setState({
+                friends: newFriends,
+            }
+        )
+    }
+
+    render = () => {
+        return (
+            <div className={style.App}>
+                <AboutMe aboutMe={this.state.aboutMe}/>
+                <div className={style.aboutYou}>
+                    <Greeting addFriend={this.addFriend}/>
+                    <Friends friends={this.state.friends}/>
+                </div>
+            </div>
+        );
+    }
+
 }
 
 export default App;

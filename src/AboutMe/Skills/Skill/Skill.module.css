@@ -1,7 +1,16 @@
 .skillBox{
-  width: 150px;
+  width: 25%;
+  font-size: 20px;
   border: 1px solid #6e70f3;
   margin-right: 5px;
-  padding-left: 5px
+  padding-left: 5px;
+}
+
+.skillBox:hover{
+  animation: blink 1s linear;
+}
+
+@keyframes blink {
+  100% { background-color: rgba(147, 89, 255, 0.44); }
 }
 

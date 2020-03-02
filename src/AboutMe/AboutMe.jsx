@@ -1,10 +1,11 @@
 import React from 'react';
+import style from "./Skill.module.css"
 
 class Skill extends React.Component {
     render = () => {
         return(
-                <div className="styleSkill">
-                    <span>{this.props.feature}</span>
+                <div className={style.skillBox}>
+                    <span>{this.props.skill}</span>
                 </div>
         );
     }

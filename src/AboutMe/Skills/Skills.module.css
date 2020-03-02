@@ -1,0 +1,9 @@
+.styleMap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #025eff;
+  flex-wrap: wrap;
+}

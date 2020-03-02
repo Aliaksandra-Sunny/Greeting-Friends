@@ -11,8 +11,9 @@ class Greeting extends React.Component {
         if(this.newNameRef.current.value!==""){
             let newName=this.newNameRef.current.value;
             this.newNameRef.current.value="";
+            this.props.addFriend(newName);
             alert("Халлёу, "+newName+"!:)");
-            this.props.addFriend();
+
         }
         else alert("Не знаю, как тебя зовут:(");
 
@@ -20,7 +21,7 @@ class Greeting extends React.Component {
     render = () => {
         return (
             <div className={style.greetingBox}>
-                <input ref={this.newNameRef}  placeholder="Ну-ка представься"/>
+                <input ref={this.newNameRef}  placeholder="Представься, пожалуйста"/>
                 <button onClick={this.onClickHello}>Йоу</button>
             </div>
         );

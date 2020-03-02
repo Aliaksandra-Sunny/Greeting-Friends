@@ -1,13 +1,13 @@
 import React from 'react';
-import Skill from "./Skill";
+import Skill from "./Skill/Skill";
 import "./Skills.css"
 
 class Skills extends React.Component {
     render = () => {
-        let skillsArr=["communicative", "optimistic", "infantile"]
-        let skillsElements=skillsArr.map((item)=>{
+        debugger
+        let skillsElements=this.props.mySkills.map((skill)=>{
             return(
-                <Skill feature={item}/>
+                <Skill skill={skill}/>
             )
         });
         return (

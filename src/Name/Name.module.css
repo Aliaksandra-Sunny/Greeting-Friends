@@ -1,0 +1,18 @@
+.name{
+  border: darkgrey 1px solid;
+  background-color: #dea9e1;
+  /*font-size: 20px;*/
+  width: 350px;
+  /*height: 50px;*/
+  margin: 5px;
+  letter-spacing: 2px;
+  animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+  0% {  color: #FFFF;}
+  25%{color: #00BECB;}
+  50% { color: #003BB0; }
+  75%{ color: #00BECB;}
+  100% { color: #FFFF; }
+}

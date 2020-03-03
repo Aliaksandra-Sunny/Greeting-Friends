@@ -6,7 +6,17 @@
   align-items: center;
   flex-direction: column;
   height: 100%;
-  width: 50%;
+}
+
+@media (min-width: 601px) {
+  .aboutMe {
+    border-right: #9184ff 1px solid;
+  }
+}
+@media (max-width: 601px) {
+  .aboutMe {
+    border-bottom: #9184ff 1px solid;
+  }
 }
 
 .name{

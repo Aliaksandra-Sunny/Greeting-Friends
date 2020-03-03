@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Greeting-Friends/static/css/main.655051d1.chunk.css",
+    "main.js": "/Greeting-Friends/static/js/main.fed8cd52.chunk.js",
+    "main.js.map": "/Greeting-Friends/static/js/main.fed8cd52.chunk.js.map",
+    "runtime-main.js": "/Greeting-Friends/static/js/runtime-main.9bba66a4.js",
+    "runtime-main.js.map": "/Greeting-Friends/static/js/runtime-main.9bba66a4.js.map",
+    "static/js/2.e71bbbbc.chunk.js": "/Greeting-Friends/static/js/2.e71bbbbc.chunk.js",
+    "static/js/2.e71bbbbc.chunk.js.map": "/Greeting-Friends/static/js/2.e71bbbbc.chunk.js.map",
+    "index.html": "/Greeting-Friends/index.html",
+    "precache-manifest.caa8697a453744571a53f41a3615e4db.js": "/Greeting-Friends/precache-manifest.caa8697a453744571a53f41a3615e4db.js",
+    "service-worker.js": "/Greeting-Friends/service-worker.js",
+    "static/css/main.655051d1.chunk.css.map": "/Greeting-Friends/static/css/main.655051d1.chunk.css.map",
+    "static/js/2.e71bbbbc.chunk.js.LICENSE.txt": "/Greeting-Friends/static/js/2.e71bbbbc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9bba66a4.js",
+    "static/js/2.e71bbbbc.chunk.js",
+    "static/css/main.655051d1.chunk.css",
+    "static/js/main.fed8cd52.chunk.js"
+  ]
+}

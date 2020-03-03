@@ -18,10 +18,15 @@ class Greeting extends React.Component {
         else alert("Не знаю, как тебя зовут:(");
 
     }
+
+    onEnterPress=(e)=>{
+        if(e.key === "Enter")
+            this.onClickHello();
+    }
     render = () => {
         return (
             <div className={style.greetingBox}>
-                <input ref={this.newNameRef}  placeholder="Представься, пожалуйста"/>
+                <input onKeyPress={this.onEnterPress} ref={this.newNameRef}  placeholder="Представься, пожалуйста"/>
                 <button onClick={this.onClickHello}>Йоу</button>
             </div>
         );

@@ -5,16 +5,18 @@
   justify-content:center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+
 }
 
 @media (min-width: 601px) {
   .aboutMe {
+    height: 100%;
     border-right: #9184ff 1px solid;
   }
 }
-@media (max-width: 601px) {
+@media (max-width: 600px) {
   .aboutMe {
+    height: 450px;
     border-bottom: #9184ff 1px solid;
   }
 }

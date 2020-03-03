@@ -4,9 +4,9 @@ import style from "./Skills.module.css"
 
 class Skills extends React.Component {
     render = () => {
-        let skillsElements=this.props.mySkills.map((skill)=>{
+        let skillsElements=this.props.mySkills.map((skill, index)=>{
             return(
-                <Skill skill={skill}/>
+                <Skill key={index} skill={skill}/>
             )
         });
         return (

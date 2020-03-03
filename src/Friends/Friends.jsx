@@ -3,10 +3,10 @@ import style from "./Friends.module.css"
 import Friend from "./Friend/Friend";
 
 class Friends extends React.Component {
-    render = (props) => {
-        let friendsItems = this.props.friends.map((friend) => {
+    render = () => {
+        let friendsItems = this.props.friends.map((friend, index) => {
             return (
-                <Friend friend={friend}/>
+                <Friend key={index}friend={friend}/>
             )
         });
         return (

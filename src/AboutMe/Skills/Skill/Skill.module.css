@@ -3,8 +3,7 @@
     height: 30px;
   font-size: 100%;
   border: 1px solid #6e70f3;
-  margin-right: 5px;
-  padding-left: 5px;
+  margin: 5px;
 }
 
 .skillBox:hover{

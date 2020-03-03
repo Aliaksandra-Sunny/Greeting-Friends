@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "448c79393921ff89ca7d0582f1e8e657",
+    "revision": "fbd475b15f55d899be61f6c8eb47581b",
     "url": "/Greeting-Friends/index.html"
   },
   {
-    "revision": "5dbe6c81c31ac8a9e3e0",
-    "url": "/Greeting-Friends/static/css/main.655051d1.chunk.css"
+    "revision": "6e1c2695250ee9f8209d",
+    "url": "/Greeting-Friends/static/css/main.9caec8fb.chunk.css"
   },
   {
     "revision": "991a2f90b7b2334bec72",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Greeting-Friends/static/js/2.e71bbbbc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5dbe6c81c31ac8a9e3e0",
+    "revision": "6e1c2695250ee9f8209d",
     "url": "/Greeting-Friends/static/js/main.fed8cd52.chunk.js"
   },
   {

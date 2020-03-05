@@ -1,4 +1,4 @@
-.App {
+.monday {
     background-color: #dcc6ff;
     display: flex;
     justify-content: center;
@@ -7,8 +7,8 @@
     width: 100vw;
 }
 
-@media (min-width: 600px) {
-    .App {
+@media (min-width: 601px) {
+    .monday {
         height: 100vh;
         width: 100vw;
         flex-direction: row;
@@ -17,11 +17,9 @@
 }
 
 @media (max-width: 600px) {
-    .App {
+    .monday {
         flex-direction: column;
         justify-content: flex-start;
         width: 100vw;
     }
 }
-
-

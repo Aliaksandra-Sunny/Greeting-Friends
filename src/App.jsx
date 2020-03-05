@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './App.module.css';
-import Greeting from "./Greeting/Greeting";
-import Friends from "./Friends/Friends";
-import AboutMe from "./AboutMe/AboutMe";
+import Greeting from "./Components/Greeting/Greeting";
+import Friends from "./Components/Friends/Friends";
+import AboutMe from "./Components/AboutMe/AboutMe";
 
 class App extends React.Component {
 

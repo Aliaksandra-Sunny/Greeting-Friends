@@ -1,0 +1,9 @@
+.friends{
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 80%;
+    width: 50%;
+}

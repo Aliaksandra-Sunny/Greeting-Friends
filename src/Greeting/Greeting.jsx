@@ -1,29 +1,37 @@
 import React from 'react';
 import style from "./Greeting.module.css"
 import Input from "./Input/Input";
+import Button from "./Button/Button";
 
 class Greeting extends React.Component {
-    constructor(props) {
-        super(props);
-        this.newNameRef = React.createRef();
-    }
 
-    onClickHello = () => {
-        if (this.newNameRef.current.value !== "") {
-            let newName = this.newNameRef.current.value;
-            this.newNameRef.current.value = "";
+    state = {
+        inputData: "",
+    };
+
+    readInput = (data) => {
+        this.setState({
+            inputData: data,
+        })
+    };
+
+    sayHello = () => {
+        debugger
+        if (this.state.inputData !== "") {
+            let newName = this.state.inputData;
+            this.setState({
+                inputData: "",
+            });
             this.props.addFriend(newName);
             alert("Халлёу, " + newName + "! Теперь мы друзья:)");
-
-        } else alert("Не знаю, как тебя зовут:(");
-
-    }
+        }
+    };
 
     render = () => {
         return (
             <div className={style.greetingBox}>
-                <Input addFriend={this.props.addFriend}/>
-                <button onClick={this.onClickHello}>Йоу</button>
+                <Input readInput={this.readInput}  sayHello={this.sayHello} addFriend={this.props.addFriend}/>
+                <Button sayHello={this.sayHello}/>
             </div>
         );
     }

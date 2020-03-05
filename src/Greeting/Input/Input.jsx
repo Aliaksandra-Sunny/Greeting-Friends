@@ -3,40 +3,46 @@ import style from "./Input.module.css"
 
 class Input extends React.Component {
 
-    state={
+    state = {
         error: true,
         name: "",
-    }
-
-    onClickHello=()=>{
-        if(this.state.name!==""){
-            let newName=this.state.name;
-            this.state.name="";
-            this.props.addFriend(newName);
-            alert("Халлёу, "+newName+"! Теперь мы друзья:)");
-
-        }
-        else alert("Не знаю, как тебя зовут:(");
-
-    }
+    };
 
     changeInput = (e) => {
-        this.setState({
-            error: false,
-            title: e.currentTarget.value,
-        });
-    }
+        if (e.currentTarget.value !== "") {
+            this.setState({
+                error: false,
+                name: e.currentTarget.value,
+            });
+        } else {
+            this.setState({
+                error: true,
+                name: e.currentTarget.value,
+            });
+        }
+        this.props.readInput(e.currentTarget.value);
+    };
 
 
-    onEnterPress=(e)=>{
-        if(e.key === "Enter")
-            this.onClickHello();
-    }
+    onEnterPress = (e) => {
+        if (e.key === "Enter") {
+            if (this.state.name !== "") {
+                this.props.sayHello();
+                this.setState({
+                    name: "",
+                    error: true,
+                });
+            }
+        }
+    };
 
     render = () => {
         return (
             <div className={style.input}>
-                <input value={this.state.name} onKeyPress={this.onEnterPress} onChange={this.changeInput}  placeholder="Представься, пожалуйста"/>
+                <input className={this.state.error ? style.error : ""}
+                       value={this.state.name}
+                       onChange={this.changeInput}
+                       onKeyPress={this.onEnterPress} placeholder="Представься, пожалуйста"/>
             </div>
         );
     }

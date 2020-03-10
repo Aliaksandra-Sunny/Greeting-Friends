@@ -26,28 +26,28 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav className={style.nav}>
-                {
-                    !this.state.isHidden &&
-                    <div>
-                        <div className={style.item}>
-                            <NavLink to="/monday" activeClassName={style.active}>Monday</NavLink>
-                        </div>
-                        <div className={style.item}>
-                            <NavLink to="/tuesday" activeClassName={style.active}>Tuesday</NavLink>
-                        </div>
-                        <div className={style.item}>
-                            <NavLink to="/wednesday" activeClassName={style.active}>Wednesday</NavLink>
-                        </div>
-                        <div className={style.item}>
-                            <NavLink to="/thursday" activeClassName={style.active}>Thursday</NavLink>
-                        </div>
-                        <div className={style.item}>
-                            <NavLink to="/friday" activeClassName={style.active}>Friday</NavLink>
-                        </div>
+
+                {!this.state.isHidden && <button onClick={this.onHideFiltersClick}>hide</button>}
+                {this.state.isHidden && <button onClick={this.onShowFiltersClick}>show</button>}
+                {!this.state.isHidden &&
+                <div className={style.menu}>
+                    <div className={style.item}>
+                        <NavLink to="/monday" activeClassName={style.active}>Monday</NavLink>
                     </div>
+                    <div className={style.item}>
+                        <NavLink to="/tuesday" activeClassName={style.active}>Tuesday</NavLink>
+                    </div>
+                    <div className={style.item}>
+                        <NavLink to="/wednesday" activeClassName={style.active}>Wednesday</NavLink>
+                    </div>
+                    <div className={style.item}>
+                        <NavLink to="/thursday" activeClassName={style.active}>Thursday</NavLink>
+                    </div>
+                    <div className={style.item}>
+                        <NavLink to="/friday" activeClassName={style.active}>Friday</NavLink>
+                    </div>
+                </div>
                 }
-                {!this.state.isHidden && <span onClick={this.onHideFiltersClick}>hide</span>}
-                {this.state.isHidden && <span onClick={this.onShowFiltersClick}>show</span>}
             </nav>
         )
     }

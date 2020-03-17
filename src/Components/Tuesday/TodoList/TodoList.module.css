@@ -1,0 +1,20 @@
+.todoList{
+    border: 1px solid black;
+}
+
+.todoList > div {
+    padding: 10px;
+}
+
+@media (min-width: 601px) {
+    .todoList{
+        width: 400px;
+    }
+
+}
+@media (max-width: 600px) {
+    .todoList{
+        width: 80%;
+    }
+
+}

@@ -26,24 +26,19 @@ class TodoList extends React.Component {
             filterValue: "All",
         };
         state = restoreState("our-state", state);
-        this.setState(state, () => {
-            this.state.tasks.forEach(task => {
-                if (task.id >= this.newTaskId) {
-                    this.newTaskId = task.id + 1;
-                }
-            });
-        });
+        this.setState(state);
     };
 
 
     addTask = (newTitle) => {           //add new task (props for header)
+
+        let newId= (this.state.tasks!=0)?this.state.tasks[this.state.tasks.length-1].id+1: 0;
         let newTask = {
-            id: this.newTaskId,
+            id: newId,
             title: newTitle,
             isDone: false,
             priority: "low"
         };
-        this.newTaskId++;
         let newTasks = [...this.state.tasks, newTask];
         this.setState({
                 tasks: newTasks,
@@ -88,7 +83,8 @@ class TodoList extends React.Component {
     };
 
     deleteTask = (id) => {
-        let newTasks = this.state.tasks.splice(id, 1);
+        debugger
+        let newTasks=this.state.tasks.filter(task=>task.id!=id)
         this.setState({
                 tasks: newTasks,
             },
@@ -96,11 +92,10 @@ class TodoList extends React.Component {
             () => {
                 saveState("our-state", this.state)
             })
-        this.newTaskId--;
     };
 
     showTaskList = () => {
-        return this.state.tasks.map((task) => <option key={task.id}>{task.title}</option>)
+        return this.state.tasks.map((task) => <option key={task.id}>{task.id}</option>)
     };
 
 

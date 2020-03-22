@@ -26,21 +26,21 @@ class TodoListTask extends React.Component {
         })
     };
 
-    activateChangePrior=()=>{
+    activateChangePrior = () => {
         this.setState({
             priorityChange: true,
         })
     };
 
-    deactivateChangePrior=()=>{
+    deactivateChangePrior = () => {
         this.setState({
             priorityChange: false,
         })
     };
 
-    changePriority=(e)=>{
+    changePriority = (e) => {
         this.props.changePriority(this.props.task.id, e.currentTarget.value);
-    }
+    };
 
     changeTitle = (e) => {
         this.props.changeTitle(this.props.task.id, e.currentTarget.value);
@@ -54,19 +54,23 @@ class TodoListTask extends React.Component {
             <div
                 className={this.props.task.isDone ? `${style["todoList-task"]} ${style["done"]}` : `${style["todoList-task"]}`}>
                 <input type="checkbox" onChange={this.onIsDoneChanged} checked={this.props.task.isDone}/>
-                {this.state.editMore
-                    ? <input type="text" onBlur={this.deactivateEditMore} autoFocus={true} onChange={this.changeTitle}
-                             value={this.props.task.title}/>
-                    : <span onClick={this.activateEditMore}>{this.props.task.id} - {this.props.task.title}, </span>
-                }
-                {this.state.priorityChange?
-                    <select onChange={this.changePriority} value={this.props.task.priority} onBlur={this.deactivateChangePrior}>
-                        <option>low</option>
-                        <option>medium</option>
-                        <option>high</option>
-                    </select>
-                    : <span onClick={this.activateChangePrior}> priority: {this.props.task.priority}</span>
-                }
+                <div className={style.data}>
+                    {this.state.editMore
+                        ?
+                        <input type="text" onBlur={this.deactivateEditMore} autoFocus={true} onChange={this.changeTitle}
+                               value={this.props.task.title}/>
+                        : <span onClick={this.activateEditMore}>{this.props.task.id} - {this.props.task.title}, </span>
+                    }
+                    {this.state.priorityChange ?
+                        <select onChange={this.changePriority} value={this.props.task.priority} autoFocus={true}
+                                onBlur={this.deactivateChangePrior}>
+                            <option>low</option>
+                            <option>medium</option>
+                            <option>high</option>
+                        </select>
+                        : <span onClick={this.activateChangePrior}> priority: {this.props.task.priority}</span>
+                    }
+                </div>
                 <Button func={this.deleteItem} name="Delete"/>
             </div>
         );

@@ -31,7 +31,7 @@ class Greeting extends React.Component {
         return (
             <div className={style.greetingBox}>
                 <Input readInput={this.readInput}  sayHello={this.sayHello} addFriend={this.props.addFriend}/>
-                <Button sayHello={this.sayHello}/>
+                <Button name="Hello" func={this.sayHello}/>
             </div>
         );
     }

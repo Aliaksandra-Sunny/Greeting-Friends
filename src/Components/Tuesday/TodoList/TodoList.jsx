@@ -9,11 +9,11 @@ import {restoreState} from "../../../js/restoreState";
 
 class TodoList extends React.Component {
 
-    newTaskId = 0;
     state = {
         tasks: [],
         filterValue: "All",
     };
+    priority = ["low", "medium", "high"];
 
     componentDidMount() {
         this.restoreState();
@@ -32,7 +32,7 @@ class TodoList extends React.Component {
 
     addTask = (newTitle) => {           //add new task (props for header)
 
-        let newId= (this.state.tasks!=0)?this.state.tasks[this.state.tasks.length-1].id+1: 0;
+        let newId = (this.state.tasks != 0) ? this.state.tasks[this.state.tasks.length - 1].id + 1 : 0;
         let newTask = {
             id: newId,
             title: newTitle,
@@ -63,6 +63,10 @@ class TodoList extends React.Component {
         this.changeTask(id, {title: newTitle});
     };
 
+    changePriority = (id, newPriority) => {
+        this.changeTask(id, {priority: newPriority});
+    }
+
     changeStatus = (id, isDone) => {        //change checkbox of task (props for ToDoListTasks)
         this.changeTask(id, {isDone: isDone});
     };
@@ -82,9 +86,9 @@ class TodoList extends React.Component {
             })
     };
 
-    deleteTask = (id) => {
+    deleteItem = (id) => {
         debugger
-        let newTasks=this.state.tasks.filter(task=>task.id!=id)
+        let newTasks = this.state.tasks.filter(task => task.id !== id)
         this.setState({
                 tasks: newTasks,
             },
@@ -94,16 +98,13 @@ class TodoList extends React.Component {
             })
     };
 
-    showTaskList = () => {
-        return this.state.tasks.map((task) => <option key={task.id}>{task.id}</option>)
-    };
-
 
     render = () => {
         return (
             <div className={style.todoList}>
                 <TodoListHeader addTask={this.addTask}/>
-                <TodoListTasks changeStatus={this.changeStatus} changeTitle={this.changeTitle}
+                <TodoListTasks changePriority={this.changePriority} deleteItem={this.deleteItem}
+                               changeStatus={this.changeStatus} changeTitle={this.changeTitle}
                                tasks={this.state.tasks.filter(t => {
                                        switch (this.state.filterValue) {
                                            case "Completed":
@@ -116,8 +117,7 @@ class TodoList extends React.Component {
                                    }
                                )
                                }/>
-                <TodoListFooter showTaskList={this.showTaskList} deleteTask={this.deleteTask}
-                                changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
+                <TodoListFooter changeFilter={this.changeFilter} filterValue={this.state.filterValue}/>
             </div>
         );
     }

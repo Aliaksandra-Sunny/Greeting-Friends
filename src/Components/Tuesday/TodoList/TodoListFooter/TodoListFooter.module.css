@@ -1,3 +1,14 @@
 .filter-active {
-    background-color: #99a6ff;
+    background-color: rgba(192, 159, 255, 0.36);
+}
+
+.todoListFooter button{
+    text-decoration: none;
+    user-select: none;
+    padding: .2em 1.2em;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 2px;
+    display: inline-block;
+    font-family: arial,sans-serif;
 }

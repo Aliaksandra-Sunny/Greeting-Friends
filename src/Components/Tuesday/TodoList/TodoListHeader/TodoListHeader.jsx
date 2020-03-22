@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import style from "./TodoListHeader.module.css"
+import Button from "../../../Monday/Friends/Greeting/Button/Button";
 
 class TodoListHeader extends React.Component {
 
@@ -38,14 +39,14 @@ class TodoListHeader extends React.Component {
 
     render = () => {
         return (
-            <div className="todoList-header">
-                <h3 className="todoList-header__title">What to Learn?</h3>
+            <div className={style.todoListHeader}>
+                <h3 className={style.title}>What to Learn?</h3>
                 <div className="todoList-newTaskForm">
                     <input onKeyPress={this.onEnterPress} onChange={this.changeInput}
                            className={this.state.error === true ? `${style.error}` : ""}
                            value={this.state.title}
                            type="text" placeholder="New task name"/>
-                    <button onClick={this.onAddTaskClick}>Add</button>
+                    <Button func={this.onAddTaskClick} name="Add"/>
                 </div>
             </div>
         );

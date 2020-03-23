@@ -16,7 +16,6 @@ class Greeting extends React.Component {
     };
 
     sayHello = () => {
-        debugger
         if (this.state.inputData !== "") {
             let newName = this.state.inputData;
             this.setState({

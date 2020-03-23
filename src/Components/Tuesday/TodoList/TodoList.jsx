@@ -31,7 +31,6 @@ class TodoList extends React.Component {
 
 
     addTask = (newTitle) => {           //add new task (props for header)
-
         let newId = (this.state.tasks != 0) ? this.state.tasks[this.state.tasks.length - 1].id + 1 : 0;
         let newTask = {
             id: newId,
@@ -87,7 +86,6 @@ class TodoList extends React.Component {
     };
 
     deleteItem = (id) => {
-        debugger
         let newTasks = this.state.tasks.filter(task => task.id !== id)
         this.setState({
                 tasks: newTasks,
